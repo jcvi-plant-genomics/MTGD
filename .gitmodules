@@ -1,0 +1,3 @@
+[submodule "tripal"]
+    path = tripal-7.x-2.1-beta3
+    url = https://github.com/jcvi-plant-genomics/medicago-tripal.git

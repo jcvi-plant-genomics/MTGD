@@ -1,0 +1,9 @@
+Options -Indexes +FollowSymLinks
+RewriteEngine on
+RewriteRule ^$ tripal/index.php [L]
+RewriteCond %{DOCUMENT_ROOT}/tripal%{REQUEST_URI} -f
+RewriteRule .* tripal/$0 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !(jbrowse|medicago|medicmine|cgi-bin|logs)
+RewriteRule .* tripal/index.php?q=$0 [L,QSA]
